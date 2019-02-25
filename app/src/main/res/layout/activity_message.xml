@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp">
+
+        <Button android:id="@+id/btnBack"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_back"
+            android:layout_centerVertical="true"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userProfileImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="6dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/btnBack"/>
+
+        <TextView android:id="@+id/lblUserProfileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/colorWithe"
+            android:layout_toEndOf="@id/userProfileImg"
+            android:layout_marginStart="6dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView android:id="@+id/recViewMessages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolBar"
+        android:layout_above="@+id/lytSendText"/>
+
+    <RelativeLayout android:id="@+id/lytSendText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark">
+
+        <android.support.v7.widget.AppCompatEditText android:id="@+id/messageEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/btnSend"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorWithe"
+            android:theme="@style/Base.Theme.AppCompat.Light"
+            android:hint="Digite Aqui..."
+            android:textColorHint="@color/colorWithe"/>
+        
+        <ImageButton android:id="@+id/btnSend"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_send"
+            android:background="@android:color/transparent" />
+        
+    </RelativeLayout>
+
+</RelativeLayout>
