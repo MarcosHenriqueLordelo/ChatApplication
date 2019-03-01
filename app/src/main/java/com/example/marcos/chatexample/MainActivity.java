@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.marcos.chatexample.Fragments.ChatsFragment;
 import com.example.marcos.chatexample.Fragments.UsersFragment;
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             hashMap.put("Status", status);
 
             dbRef.updateChildren(hashMap);
+
         }
     }
 
