@@ -59,7 +59,7 @@ public class UsersFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence text, int start, int before, int count) {
-                searchUSers(String.valueOf(text));
+                searchUsers(String.valueOf(text));
             }
 
             @Override
@@ -96,7 +96,7 @@ public class UsersFragment extends Fragment {
 
     }
 
-    private void searchUSers(final String text){
+    private void searchUsers(final String text){
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Users");
         final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         dbRef.addValueEventListener(new ValueEventListener() {
